@@ -36,6 +36,10 @@ function checkApiKey(req, res, next) {
   next();
 }
 
+app.get("/", (req, res) => {
+  res.status(404).json({ error: "Not Found" });
+});
+
 app.post("/v1/presigned-url", checkApiKey, async (req, res) => {
   try {
     const {

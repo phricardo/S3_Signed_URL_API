@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  presigned-api:
+    build: .
+    container_name: minio-presigned-api
+    ports:
+      - "${PORT:-8080}:8080"
+    env_file:
+      - .env
+    restart: unless-stopped

@@ -36,7 +36,7 @@ function checkApiKey(req, res, next) {
   next();
 }
 
-app.post("/presigned-url", checkApiKey, async (req, res) => {
+app.post("/v1/presigned-url", checkApiKey, async (req, res) => {
   try {
     const {
       region,
